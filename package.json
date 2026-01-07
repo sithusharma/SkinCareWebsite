@@ -1,0 +1,12 @@
+{
+  "name": "aura-skincare-boutique",
+  "version": "1.1.0",
+  "description": "Professional Boutique Spa Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "browser-sync start --server --files 'css/*.css, *.html, js/*.js'"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.0"
+  }
+}
