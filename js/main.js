@@ -1,26 +1,55 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Scroll Animation Observer
-    const revealCallback = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
-        });
-    };
+    const navbar = document.getElementById('navbar');
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    const bookingModal = document.getElementById('bookingModal');
+    const closeBtn = document.getElementById('closeModal');
 
-    const revealObserver = new IntersectionObserver(revealCallback, {
-        threshold: 0.1
+    // 1. Transparent to Solid Nav on Scroll
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 80) { navbar.classList.add('scrolled'); } 
+        else { navbar.classList.remove('scrolled'); }
     });
 
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-    // Navbar Scroll Effect
-    const nav = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            nav.classList.add('scrolled');
+    // 2. Mobile Menu Toggle
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+        if (navLinks.classList.contains('open')) {
+            document.body.style.overflow = 'hidden';
         } else {
-            nav.classList.remove('scrolled');
+            document.body.style.overflow = '';
         }
     });
+
+    // 3. Modal Popup Logic
+    document.querySelectorAll('.open-booking').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            bookingModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            navLinks.classList.remove('open'); // Close mobile menu if open
+        });
+    });
+
+    closeBtn.addEventListener('click', () => {
+        bookingModal.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+
+    // Close modal on outside click
+    window.addEventListener('click', (e) => {
+        if (e.target === bookingModal) {
+            bookingModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+
+    // 4. Reveal Animation
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('active');
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 });
