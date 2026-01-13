@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         else navbar.classList.remove('scrolled');
     });
 
-    // 2. Mobile Menu Toggle
+    // 2. Mobile Menu
     const toggleMenu = () => {
         navLinks.classList.toggle('open');
         document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     menuToggle.addEventListener('click', toggleMenu);
 
-    // Close menu when a link is clicked (Fix for mobile navigation)
+    // Auto-close menu on link click
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('open');
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3. Service Popup Logic
+    // 3. Service Popup
     document.querySelectorAll('.menu-item.clickable').forEach(item => {
         item.addEventListener('click', () => {
             modalTitle.innerText = item.getAttribute('data-title');
@@ -53,14 +53,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 5. Close Logic
-    const closeModals = () => {
+    const closeAll = () => {
         bookingModal.classList.remove('active');
         serviceModal.classList.remove('active');
         document.body.style.overflow = '';
     };
 
-    document.querySelectorAll('.modal-close').forEach(btn => btn.addEventListener('click', closeModals));
-    window.addEventListener('click', (e) => { if (e.target.classList.contains('modal-overlay')) closeModals(); });
+    document.querySelectorAll('.modal-close').forEach(btn => btn.addEventListener('click', closeAll));
+    window.addEventListener('click', (e) => { if (e.target.classList.contains('modal-overlay')) closeAll(); });
 
     // 6. Reveal
     const observer = new IntersectionObserver((entries) => {
