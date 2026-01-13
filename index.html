@@ -6,17 +6,18 @@
     <title>SkinCare Beauty Spa</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="./images/skbc_logo.png">
 </head>
 <body>
 
     <div class="modal-overlay" id="bookingModal">
         <div class="modal-content">
-            <button class="modal-close" id="closeModal">&times;</button>
+            <button class="modal-close" id="closeModal">×</button>
             <span class="caps">Book an Appointment</span>
             <h2>Studio Policy</h2>
             <p>We operate on a <strong>call or text only</strong> basis for all bookings.</p>
             <div class="contact-info">
-                <p class="phone-number">704-654-7681</p>
+                <p class="phone-number highlight">704-654-7681</p>
                 <p class="policy-note">Appointment based only. Please include your name and desired treatment in your message.</p>
             </div>
         </div>
@@ -24,7 +25,7 @@
 
     <div class="modal-overlay" id="serviceModal">
         <div class="modal-content">
-            <button class="modal-close" id="closeServiceModal">&times;</button>
+            <button class="modal-close" id="closeServiceModal">×</button>
             <span class="caps" id="modalCat">Treatment Detail</span>
             <h2 id="modalTitle">Service Name</h2>
             <p id="modalDesc" style="margin-bottom: 2rem; color: var(--light-text);">Service description goes here...</p>
@@ -114,12 +115,12 @@
                     <div class="tier"><h3>60-Min</h3><p>$90</p></div>
                     <div class="tier"><h3>30-Min</h3><p>$55</p></div>
                 </div>
-                <ul class="mem-list">
-                    <li>One discounted facial per month</li>
-                    <li>10% off waxing services per month</li>
-                    <li>Two guest facial certificates annually</li>
-                </ul>
-                <div style="margin-top: 1rem;">
+                <div class="mem-perks">
+                    <span>One Discounted Facial Per Month</span>
+                    <span>10% Off Waxing Services</span>
+                    <span>Two Guest Facial Certificates Annually</span>
+                </div>
+                <div style="margin-top: 2rem;">
                     <button class="btn-primary open-booking">Inquire</button>
                 </div>
             </div>
@@ -146,12 +147,18 @@
         <div class="container footer-flex">
             <div class="footer-brand">
                 <div class="logo">SKINCARE</div>
-                <p class="copyright">&copy; 2026 SKINCARE BEAUTY SPA.</p>
+                <p class="copyright">© 2026 SKINCARE SPA.</p>
             </div>
+
             <div class="footer-links">
                 <div class="footer-col">
-                    <h4>Contact</h4>
+                    <h4>Booking</h4>
                     <p>704-654-7681</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Location</h4>
+                    <p>10614 Providence Rd</p>
+                    <a href="https://maps.google.com/?cid=6087228669781943913&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ5" target="_blank" class="footer-dir">Directions</a>
                 </div>
                 <div class="footer-col">
                     <h4>Social</h4>
