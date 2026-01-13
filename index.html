@@ -22,6 +22,16 @@
         </div>
     </div>
 
+    <div class="modal-overlay" id="serviceModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeServiceModal">&times;</button>
+            <span class="caps" id="modalCat">Treatment Detail</span>
+            <h2 id="modalTitle">Service Name</h2>
+            <p id="modalDesc" style="margin-bottom: 2rem; color: var(--light-text);">Service description goes here...</p>
+            <button class="btn-primary open-booking">Request This Service</button>
+        </div>
+    </div>
+
     <nav class="navbar" id="navbar">
         <div class="nav-inner">
             <div class="logo">SKINCARE BEAUTY SPA</div>
@@ -40,7 +50,7 @@
 
     <header class="hero">
         <div class="hero-content reveal">
-            <span class="caps">Boutique Esthetics</span>
+            <span class="caps">Shivalika Sharma</span>
             <h1>Skin health is <br><em>mental wealth.</em></h1>
             <button class="btn-primary open-booking">Request Appointment</button>
         </div>
@@ -51,51 +61,45 @@
             <div class="section-header reveal">
                 <span class="caps">The Menu</span>
                 <h2>Curated Rituals</h2>
+                <p style="font-size: 0.8rem; color: var(--gold); margin-top: 1rem;">Click any service for details</p>
             </div>
 
             <div class="menu-grid">
                 <div class="menu-cat reveal">
                     <h3>Advanced Facials <small>60 min</small></h3>
-                    <div class="menu-item"><span class="name">Hydrafacial</span><span class="dots"></span><span class="price">$250</span></div>
-                    <div class="menu-item"><span class="name">Microcurrent Treatment</span><span class="dots"></span><span class="price">$130</span></div>
-                    <div class="menu-item"><span class="name">Microdermabrasion</span><span class="dots"></span><span class="price">$125</span></div>
-                    <div class="menu-item"><span class="name">Hydration / Signature Glow</span><span class="dots"></span><span class="price">$110</span></div>
-                    <div class="menu-item"><span class="name">Anti-Aging / Acne Purify</span><span class="dots"></span><span class="price">$110</span></div>
-                    <div class="menu-item"><span class="name">Vitamin C Boost</span><span class="dots"></span><span class="price">$110</span></div>
-                    <div class="menu-item"><span class="name">Dermaplaning</span><span class="dots"></span><span class="price">$100</span></div>
+                    <div class="menu-item clickable" data-title="Hydrafacial" data-desc="A medical-grade resurfacing treatment that clears out your pores and hydrates your skin."><span class="name">Hydrafacial</span><span class="dots"></span><span class="price">$250</span></div>
+                    <div class="menu-item clickable" data-title="Microcurrent Treatment" data-desc="Uses low-voltage electricity to stimulate facial muscles, creating a natural lift and contour."><span class="name">Microcurrent Treatment</span><span class="dots"></span><span class="price">$130</span></div>
+                    <div class="menu-item clickable" data-title="Microdermabrasion" data-desc="Deep exfoliation that removes the top layer of dead skin to reveal a smoother complexion."><span class="name">Microdermabrasion</span><span class="dots"></span><span class="price">$125</span></div>
+                    <div class="menu-item clickable" data-title="Signature Glow" data-desc="Our custom hydration treatment designed to give you an instant, healthy radiance."><span class="name">Hydration / Signature Glow</span><span class="dots"></span><span class="price">$110</span></div>
+                    <div class="menu-item clickable" data-title="Anti-Aging / Acne Purify" data-desc="Targeted therapy focusing on either collagen production or deep pore purification."><span class="name">Anti-Aging / Acne Purify</span><span class="dots"></span><span class="price">$110</span></div>
+                    <div class="menu-item clickable" data-title="Vitamin C Boost" data-desc="Brightens dull skin and protects against environmental damage with high-potency Vitamin C."><span class="name">Vitamin C Boost</span><span class="dots"></span><span class="price">$110</span></div>
+                    <div class="menu-item clickable" data-title="Dermaplaning" data-desc="A manual exfoliation technique that removes dead skin and peach fuzz for flawless makeup application."><span class="name">Dermaplaning</span><span class="dots"></span><span class="price">$100</span></div>
                 </div>
 
                 <div class="menu-cat reveal">
                     <h3>Facial Therapy <small>30 min</small></h3>
-                    <div class="menu-item"><span class="name">Refreshing Glow</span><span class="dots"></span><span class="price">$70</span></div>
-                    <div class="menu-item"><span class="name">Sinus Relief</span><span class="dots"></span><span class="price">$70</span></div>
+                    <div class="menu-item clickable" data-title="Refreshing Glow" data-desc="A quick pick-me-up for your skin—perfect for a lunch-break refresh."><span class="name">Refreshing Glow</span><span class="dots"></span><span class="price">$70</span></div>
+                    <div class="menu-item clickable" data-title="Sinus Relief" data-desc="A specialized massage technique focused on draining sinus pressure and reducing facial puffiness."><span class="name">Sinus Relief</span><span class="dots"></span><span class="price">$70</span></div>
+                    
                     <div class="menu-cat-spacer" style="margin-top: 3rem;"></div>
                     <h3>Mind & Body <small>30 min</small></h3>
-                    <div class="menu-item"><span class="name">Physical & Emotional Healing</span><span class="dots"></span><span class="price">$50</span></div>
-                    <div class="menu-item"><span class="name">Destress & Energy Healing</span><span class="dots"></span><span class="price">$50</span></div>
+                    <div class="menu-item clickable" data-title="Physical & Emotional Healing" data-desc="A holistic session combining touch and intention to balance your inner energy."><span class="name">Physical & Emotional Healing</span><span class="dots"></span><span class="price">$50</span></div>
+                    <div class="menu-item clickable" data-title="Destress & Energy Healing" data-desc="Focused on mental clarity and stress reduction through meditative energy work."><span class="name">Destress & Energy Healing</span><span class="dots"></span><span class="price">$50</span></div>
                 </div>
 
                 <div class="menu-cat reveal">
                     <h3>Waxing</h3>
-                    <div class="menu-item"><span class="name">Brazilian</span><span class="dots"></span><span class="price">$55</span></div>
-                    <div class="menu-item"><span class="name">Full Legs</span><span class="dots"></span><span class="price">$55</span></div>
-                    <div class="menu-item"><span class="name">Full Back</span><span class="dots"></span><span class="price">$50</span></div>
-                    <div class="menu-item"><span class="name">Full Arms</span><span class="dots"></span><span class="price">$35</span></div>
-                    <div class="menu-item"><span class="name">Half Legs</span><span class="dots"></span><span class="price">$35</span></div>
-                    <div class="menu-item"><span class="name">Bikini Line</span><span class="dots"></span><span class="price">$35</span></div>
-                    <div class="menu-item"><span class="name">Half Back</span><span class="dots"></span><span class="price">$30</span></div>
-                    <div class="menu-item"><span class="name">Underarms</span><span class="dots"></span><span class="price">$18</span></div>
+                    <div class="menu-item clickable" data-title="Brazilian Wax" data-desc="Complete hair removal for the intimate area using high-quality sensitive wax."><span class="name">Brazilian</span><span class="dots"></span><span class="price">$55</span></div>
+                    <div class="menu-item clickable" data-title="Full Legs" data-desc="Smooth legs from ankle to hip."><span class="name">Full Legs</span><span class="dots"></span><span class="price">$55</span></div>
+                    <div class="menu-item clickable" data-title="Full Back" data-desc="Comprehensive hair removal for the entire back area."><span class="name">Full Back</span><span class="dots"></span><span class="price">$50</span></div>
+                    <div class="menu-item clickable" data-title="Underarms" data-desc="Quick and efficient hair removal for the underarms."><span class="name">Underarms</span><span class="dots"></span><span class="price">$18</span></div>
                 </div>
 
                 <div class="menu-cat reveal">
                     <h3>Threading & Tint</h3>
-                    <div class="menu-item"><span class="name">Full Face Thread/Wax</span><span class="dots"></span><span class="price">$35</span></div>
-                    <div class="menu-item"><span class="name">Eyelash Tint</span><span class="dots"></span><span class="price">$25</span></div>
-                    <div class="menu-item"><span class="name">Eyebrow Tint</span><span class="dots"></span><span class="price">$20</span></div>
-                    <div class="menu-item"><span class="name">Eyebrows</span><span class="dots"></span><span class="price">$15</span></div>
-                    <div class="menu-item"><span class="name">Side Burn</span><span class="dots"></span><span class="price">$10</span></div>
-                    <div class="menu-item"><span class="name">Chin</span><span class="dots"></span><span class="price">$8</span></div>
-                    <div class="menu-item"><span class="name">Upper Lip</span><span class="dots"></span><span class="price">$8</span></div>
+                    <div class="menu-item clickable" data-title="Full Face" data-desc="Complete facial hair removal using precise threading or gentle wax."><span class="name">Full Face Thread/Wax</span><span class="dots"></span><span class="price">$35</span></div>
+                    <div class="menu-item clickable" data-title="Eyelash Tint" data-desc="Darken your natural lashes for a mascara-free look that lasts weeks."><span class="name">Eyelash Tint</span><span class="dots"></span><span class="price">$25</span></div>
+                    <div class="menu-item clickable" data-title="Eyebrows" data-desc="Expert shaping to frame your face perfectly."><span class="name">Eyebrows</span><span class="dots"></span><span class="price">$15</span></div>
                 </div>
             </div>
         </div>
@@ -126,15 +130,14 @@
         <div class="container about-grid">
             <div class="about-img-area reveal">
                 <div class="circle-frame">
-                    <img src='images/owner_image.jpg' alt="Owner Portrait">
+                    <img src='images/shivalika-headshot.jpg' alt="Owner Portrait">
                 </div>
             </div>
             <div class="about-text-area reveal">
                 <span class="caps">The Owner</span>
                 <h2>Shivalika Sharma</h2>
                 <p>Founded by licensed esthetician Shivalika Sharma, the studio is a single-owner boutique built on over 20 years of experience in the beauty and wellness industry. Her approach to skincare is deeply personal, rooted in quality products, advanced techniques, and holistic care.</p>
-
-                <p>Every treatment is thoughtfully tailored—creating more than a service, but a calm, results-driven experience that nurtures both skin health and overall well-being.</p>
+                <p>Every treatment is thoughtfully tailored creating more than a service, but a calm, experience that nurtures both skin health and overall well being.</p>
             </div>
         </div>
     </section>
@@ -145,11 +148,10 @@
                 <div class="logo">SKINCARE</div>
                 <p class="copyright">&copy; 2026 SKINCARE BEAUTY SPA.</p>
             </div>
-            
             <div class="footer-links">
                 <div class="footer-col">
-                    <h4>Booking</h4>
-                    <p>Call or Text Only: 704-654-7681</p>
+                    <h4>Contact</h4>
+                    <p>704-654-7681</p>
                 </div>
                 <div class="footer-col">
                     <h4>Social</h4>

@@ -60,7 +60,7 @@ body {
 .hero { 
     height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; 
     background: linear-gradient(rgba(249,247,242,0.2), rgba(249,247,242,0.2)), 
-                url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1920&q=80') center/cover; 
+                url('../images/landing.jpg') center/cover; 
 }
 .hero h1 { font-family: var(--serif); font-size: clamp(2.5rem, 8vw, 4.8rem); font-weight: 400; line-height: 1.15; margin: 1.5rem 0 2.5rem; }
 .hero h1 em { font-style: italic; font-weight: 400; }
@@ -86,6 +86,21 @@ body {
 .menu-cat h3 small { font-size: 0.8rem; font-family: var(--sans); color: var(--gold); letter-spacing: 1px; }
 
 .menu-item { display: flex; align-items: baseline; margin-bottom: 1.4rem; gap: 12px; font-size: 0.95rem; }
+
+.menu-item.clickable {
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.menu-item.clickable:hover {
+    background: rgba(197, 164, 126, 0.05); /* Very light gold tint */
+    color: var(--gold);
+    transform: translateX(5px);
+}
+
+
 .dots { flex-grow: 1; border-bottom: 1px dotted #ccc; height: 1px; position: relative; top: -4px; }
 .price { color: var(--gold); font-weight: 500; font-size: 0.9rem; min-width: 45px; text-align: right; }
 
